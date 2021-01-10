@@ -1,10 +1,12 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
 // Memory를 사용한 저장소
+// @Repository
 public class MemoryMemberRepository implements MemberRepository{
     // Java 11 버전에서 선언
     // var store = new HashMap<Long, Member>();
