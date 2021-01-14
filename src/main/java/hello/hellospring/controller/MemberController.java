@@ -3,9 +3,10 @@ package hello.hellospring.controller;
 import hello.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 // Spring Container가 해당 객체를 생성한 후 관리
-@Controller
+// @Controller
 public class MemberController {
 
     // Spring Container에 등록하면 해당 객체는 하나만 생성한다.
@@ -15,5 +16,10 @@ public class MemberController {
     @Autowired
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+    }
+
+    @GetMapping("/members/new")
+    public String createForm() {
+        return "members/createMemberForm";
     }
 }
